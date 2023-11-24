@@ -15,9 +15,6 @@ import java.util.Set;
 
 @Service
 public class BookingService {
-
-    @Autowired
-    ShowService showService;
     @Autowired
     ShowRepository showRepository;
     @Autowired

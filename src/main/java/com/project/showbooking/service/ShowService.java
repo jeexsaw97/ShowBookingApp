@@ -13,7 +13,6 @@ import java.util.Set;
 
 @Service
 public class ShowService {
-
     @Autowired
     ShowRepository showRepository;
 
@@ -33,6 +32,7 @@ public class ShowService {
         List<String> sortedSeats = new ArrayList<>(set);
         Collections.sort(sortedSeats);
 
+        // Print available seats
         int counter = 1;
         for(String seat : sortedSeats) {
             if(counter > currentShow.getSeatsPerRow()) {

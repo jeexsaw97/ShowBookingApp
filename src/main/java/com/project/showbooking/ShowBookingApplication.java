@@ -19,11 +19,6 @@ import java.util.*;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.project.showbooking")
 public class ShowBookingApplication implements CommandLineRunner {
-
-	@Autowired
-	ShowService showService;
-	@Autowired
-	BookingService bookingService;
 	@Autowired
 	AdminService adminService;
 	@Autowired

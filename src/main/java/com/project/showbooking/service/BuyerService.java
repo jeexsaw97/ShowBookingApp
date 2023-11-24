@@ -11,7 +11,6 @@ import java.util.Set;
 
 @Service
 public class BuyerService {
-
     @Autowired
     BookingService bookingService;
     @Autowired
