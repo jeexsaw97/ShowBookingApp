@@ -42,18 +42,18 @@ public class BuyerService {
         buyerPage();
     }
 
-    public void cancelShow(String[] input) {
+    private void cancelShow(String[] input) {
         String ticketNumber = input[1];
         String phoneNumber = input[2];
         bookingService.cancelBooking(ticketNumber, phoneNumber);
     }
 
-    public void getShowAvailability(String[] input) {
+    private void getShowAvailability(String[] input) {
         int showNumber = Integer.parseInt(input[1]);
         showService.getShowAvailability(showNumber);
     }
 
-    public void bookShow(String[] input) {
+    private void bookShow(String[] input) {
         int showNumber = Integer.parseInt(input[1]);
         String phoneNumber = input[2];
         String[] seats = input[3].split(",");

@@ -34,7 +34,7 @@ public class AdminService {
         adminPage();
     }
 
-    public void createNewShow(String[] input) throws Exception {
+    private void createNewShow(String[] input) throws Exception {
         int showNumber = Integer.parseInt(input[1]);
         int numRows = Integer.parseInt(input[2]);
         int seatsPerRow = Integer.parseInt(input[3]);
@@ -43,12 +43,13 @@ public class AdminService {
             showService.createNewShow(showNumber, numRows, seatsPerRow, cancellationWindowInMinutes);
         } catch (Error e) {
             if (StringUtils.equals(e.getMessage(), "Max_Capacity")) {
+                System.out.println("Max seats is 10 per row and max rows are 26! Please try again! \n");
                 adminPage();
             }
         }
     }
 
-    public void viewShow(String[] input) {
+    private void viewShow(String[] input) {
         int showNumber = Integer.parseInt(input[1]);
         showService.viewShow(showNumber);
     }
