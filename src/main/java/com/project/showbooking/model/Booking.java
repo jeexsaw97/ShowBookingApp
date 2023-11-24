@@ -1,5 +1,6 @@
 package com.project.showbooking.model;
 
+import java.util.Date;
 import java.util.Set;
 
 public class Booking {
@@ -8,12 +9,14 @@ public class Booking {
     private String phone;
     private int showNumber;
     private Set<String> seatNumbers;
+    private Date bookingTime;
 
-    public Booking(int ticketNumber, String phone, int showNumber, Set<String> seatNumbers) {
+    public Booking(int ticketNumber, String phone, int showNumber, Set<String> seatNumbers, Date bookingTime) {
         this.ticketNumber = ticketNumber;
         this.phone = phone;
         this.showNumber = showNumber;
         this.seatNumbers = seatNumbers;
+        this.bookingTime = bookingTime;
     }
 
     public int getTicketNumber() {
@@ -46,5 +49,13 @@ public class Booking {
 
     public void setSeatNumbers(Set<String> seatNumbers) {
         this.seatNumbers = seatNumbers;
+    }
+
+    public Date getBookingTime() {
+        return bookingTime;
+    }
+
+    public void setBookingTime(Date bookingTime) {
+        this.bookingTime = bookingTime;
     }
 }
