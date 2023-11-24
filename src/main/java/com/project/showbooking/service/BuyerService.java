@@ -1,5 +1,6 @@
 package com.project.showbooking.service;
 
+import com.project.showbooking.exception.InvalidInputException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public class BuyerService {
 
     public void buyerPage() throws Exception {
         // Buyer flow
-        System.out.println("Welcome User user! \nPlease enter one of the following commands \n" +
+        System.out.println("Welcome Buyer! \nPlease enter one of the following commands \n" +
                 "- Availability  <Show Number> \n" +
                 "- Book  <Show Number> <Phone#> <Comma separated list of seats> \n" +
                 "- Cancel  <Ticket#>  <Phone#>\n" +
@@ -35,13 +36,16 @@ public class BuyerService {
             cancelShow(input);
         } else if (command.startsWith("Return")) {
             return;
+        } else {
+            throw new InvalidInputException();
         }
         buyerPage();
     }
 
     public void cancelShow(String[] input) {
+        String ticketNumber = input[1];
         String phoneNumber = input[2];
-        bookingService.cancelBooking(phoneNumber);
+        bookingService.cancelBooking(ticketNumber, phoneNumber);
     }
 
     public void getShowAvailability(String[] input) {

@@ -45,9 +45,10 @@ public class BookingService {
         Booking booking = new Booking(ticketNumber, phoneNumber, showNumber, bookedSeats, new Date());
         show.getBookings().put(phoneNumber, booking);
         bookingRepository.addBooking(booking);
+        System.out.println("Booking successful!! \nTicket number: #" +ticketNumber + "\n");
     }
 
-    public void cancelBooking(String phoneNumber) {
+    public void cancelBooking(String ticketNumber, String phoneNumber) {
         Booking booking = bookingRepository.getBooking(phoneNumber);
         Show show = showRepository.getShow(booking.getShowNumber());
         int cancellationWindowInMinutes = show.getCancellationWindowInMinutes();
@@ -61,5 +62,6 @@ public class BookingService {
         }
         show.getBookings().remove(phoneNumber);
         bookingRepository.removeBooking(phoneNumber);
+        System.out.println("Booking for " + ticketNumber + " successfully cancelled!! \n");
     }
 }

@@ -32,4 +32,27 @@ This is a simple Springboot CLI application that allows admin to setup shows and
 2. Interact with the CLI with your command inputs
 
 Admin
+
+1. Enter "1" to access Admin page
 ![img.png](img.png)
+
+2. Enter "Setup 9733 5 5 1"  to setup show
+![img_1.png](img_1.png)
+
+3. Return to User selection screen with "Return" command and enter "2" to access Buyer page
+![img_2.png](img_2.png)
+
+4. Enter "Availability 9733" to check the availability
+![img_3.png](img_3.png)
+
+5. Enter "Book 9733 97341123 A1,A2,A3" to book seats for the show
+![img_4.png](img_4.png)
+
+6. Return to Admin page and enter "View 9733" to view the booking details for the show
+![img_5.png](img_5.png)
+
+7. Return to Buyer page and enter "Cancel 8046 97341123" to cancel booking (Unable to cancel due to timeout usecase)
+![img_6.png](img_6.png)
+
+8. Return to Buyer page and enter "Cancel 574 97349624" to cancel booking (Successful cancellation use case)
+![img_7.png](img_7.png)

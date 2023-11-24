@@ -1,7 +1,6 @@
 package com.project.showbooking.repository;
 
 import com.project.showbooking.model.Booking;
-import com.project.showbooking.model.Show;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

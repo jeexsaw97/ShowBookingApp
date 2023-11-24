@@ -43,6 +43,7 @@ public class ShowBookingApplication implements CommandLineRunner {
 				// Admin flow
 				adminService.adminPage();
 			} else if (StringUtils.equals(userType, "2")) {
+				// Buyer flow
 				buyerService.buyerPage();
 			} else {
 				throw new InvalidInputException();
