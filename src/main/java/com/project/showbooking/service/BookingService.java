@@ -20,6 +20,8 @@ public class BookingService {
     @Autowired
     BookingRepository bookingRepository;
 
+    private int ticketNumber = 10000;
+
     public void createBooking(int showNumber, String phoneNumber, Set<String> bookedSeats) {
         Show show = showRepository.getShow(showNumber);
         Map<String, Booking> bookings = show.getBookings();
@@ -37,8 +39,7 @@ public class BookingService {
             return;
         }
 
-        Random random = new Random();
-        int ticketNumber = random.nextInt(10000);
+        ticketNumber++;
         Booking booking = new Booking(ticketNumber, phoneNumber, showNumber, bookedSeats, new Date());
         show.getBookings().put(phoneNumber, booking);
         bookingRepository.addBooking(booking);
